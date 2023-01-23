@@ -1,6 +1,8 @@
 @echo off
 chcp 65001
 color a
+:Start
+cls
 echo ###################################################################
 echo:
 echo 1. Sčítání
@@ -99,5 +101,12 @@ echo Mocnina základu %base% a exponentu %exponent% je %sum5%
 goto End
 
 :End
-echo ok
+echo:
+set /p end=Chces kalkulacku pouzit znovu? Napis a, jinak jakoukoliv klavesou vypni.
+if %end% == a (
+    goto Start
+) else (
+    exit
+)
+
 pause
